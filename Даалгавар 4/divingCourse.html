@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuba Diving Hicheel</title>
+    <link rel="stylesheet" href="diving.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" class="logo">
+        <ul>
+            <li><a href="index.html">Нүүр</a></li>
+            <li><a href="aboutus.html">Бидний тухай</a></li>
+            <li><a href="hicheel.html">Хичээлүүд / үйлчилгээ</a></li>
+            <li><a href="comment.html">Сэтгэгдэл / Холбоо барих</a></li>
+        </ul>
+    </div>
+    <div class="hicheel-container">
+        <h1>Scuba Diving Хичээл</h1>
+        <div class="level-buttons">
+            <button onclick="showContent('beginner')">Beginner</button>
+            <button onclick="showContent('advanced')">Advanced</button>
+            <button onclick="showContent('expert')">Expert</button>
+        </div>
+        <div id="content-container">
+            <div id="beginner" class="content">
+                <h2>Beginner Level</h2>
+                <p>This level is perfect for those just starting out in scuba diving. Learn the basics and build confidence underwater.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/k0C7EmETqxs" frameborder="0" allowfullscreen></iframe>
+            </div>
+        
+            <div id="advanced" class="content" style="display: none;">
+                <h2>Advanced Level</h2>
+                <p>Take your scuba diving skills to the next level. This course covers deeper dives and advanced techniques.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hHkT1uWa2lY" frameborder="0" allowfullscreen></iframe>
+            </div>
+        
+            <div id="expert" class="content" style="display: none;">
+                <h2>Expert Level</h2>
+                <p>For experienced divers who want to master scuba diving skills. Explore challenging dives and become an expert.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IAMEvvOmHJs" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="scuba-info">
+        <h2>Scuba Diving Тухай</h2>
+        <p>
+            Scuba diving нь усан доор амьдралтай танилцах, сэргэг усанд хөөрөх маш сонирхолтой спорт юм. Тусгай тоног төхөөрөмж ашиглан усан доор амьсгалж, эртний хөндлөн амьтадтай уулзах боломжтой.
+        </p>
+        
+        <h3>Эхлэх шалтгаанууд</h3>
+        <ul>
+            <li>Усан доорх ертөнцийг туршиж үзэх.</li>
+            <li>Далайн амьдралтай танилцах.</li>
+            <li>Эрүүл мэндэд сайн нөлөөтэй—стессийг бууруулдаг.</li>
+        </ul>
+    
+        <h3>Скаба Дайвингийн Үндсэн Төхөөрөмжүүд</h3>
+        <ul>
+            <li>**Маск** - Усан доорх харааг сайжруулдаг.</li>
+            <li>**Тамхи** - Усны гадаргуу дээр амьсгалж байх үед хэрэглэнэ.</li>
+            <li>**Бээлий** - Хөргөдөл болон хамгаалалт.</li>
+            <li>**Регулятор** - Усан доор амьсгаллах бүрэн тоног төхөөрөмж.</li>
+        </ul>
+    
+        <h3>Түгээмэл Асуултууд</h3>
+        <div class="faq">
+            <details>
+                <summary>Скаба дайвинг аюулгүй юу?</summary>
+                <p>Скаба дайвинг нь аюулгүй, зөвхөн мэргэжлийн удирдагчийн зааварчилгаа болон тоног төхөөрөмжөөр хийгдэнэ.</p>
+            </details>
+            <details>
+                <summary>Хэрхэн эхлэх вэ?</summary>
+                <p>Скаба дайвингийн эхний курс нь маш амархан бөгөөд туршлагатай дасгалжуулагчтай хамт хийдэг.</p>
+            </details>
+        </div>
+    </div>
+    
+    
+    <script>
+        function showContent(level) {
+        const levels = ['beginner', 'advanced', 'expert'];
+        levels.forEach(lvl => {
+            document.getElementById(lvl).style.display = 'none';
+        });
+        document.getElementById(level).style.display = 'block';
+}
+
+    </script>
+</body>
+</html>

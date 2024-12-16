@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бусад Үйлчилгээ</title>
+    <link rel="stylesheet" href="other.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" class="logo">
+        <ul>
+            <li><a href="index.html">Нүүр</a></li>
+            <li><a href="aboutus.html">Бидний тухай</a></li>
+            <li><a href="hicheel.html">Хичээлүүд / үйлчилгээ</a></li>
+            <li><a href="comment.html">Сэтгэгдэл / Холбоо барих</a></li>
+        </ul>
+    </div>
+<header>
+    <h1>Бусад Үйлчилгээ</h1>
+    <p>Шумбалтын болон усны гүний аяллын үйлчилгээний тухай</p>
+</header>
+
+<div class="container">
+    <div class="service">
+        <h3>Усны гүний аялал</h3>
+        <p>Шумбалтын дараа усан доор аялал хийх боломжтой. Энэ нь усан дотор амьтдыг харах, харагдах гоо үзэсгэлэнг эдлэх боломжийг олгоно.</p>
+        <ul>
+            <li>Далайн амьтдыг судлах</li>
+            <li>Усан доорх зураг авах</li>
+            <li>Тамирчдыг хэрхэн тэжээх болон хамгаалах</li>
+        </ul>
+        <button class="info-button" onclick="showOrderSection('underwater-travel')">Дэлгэрэнгүй мэдээлэл</button>
+        
+        <div id="underwater-travel" class="order-section">
+            <p>Усны гүний аялал бол амьтдын амьдралыг үзэх, зураг авах, болон амьдралын урт настай нарийн зүйлсийг судлах үзвэр юм. Усан доорх үзэсгэлэнтэй танилцаарай.</p>
+            <label for="time">Цаг сонгоно уу:</label>
+            <select id="time" name="time">
+                <option value="9am">Өглөө 9:00</option>
+                <option value="12pm">Өдрийн 12:00</option>
+                <option value="3pm">Оройн 3:00</option>
+            </select>
+            <button>Захиалах</button>
+        </div>
+    </div>
+
+    <div class="service">
+        <h3>Шигшүүртэй усан сэлэлт</h3>
+        <p>Шигшүүртэй усан сэлэлт нь танд амьсгал авахад зориулагдсан хувцас хэрэглэлийг ашиглан усан дотор илүү удаан сэлэх боломж олгоно.</p>
+        <ul>
+            <li>Далайн усанд амьсгал авахад зориулсан доторх төхөөрөмжүүд</li>
+            <li>Бага гүнтэй усан орчинд сэлэх</li>
+            <li>Усан дээр хүчний сэлэлт</li>
+        </ul>
+        <button class="info-button" onclick="showOrderSection('swimming')">Дэлгэрэнгүй мэдээлэл</button>
+        
+        <div id="swimming" class="order-section">
+            <p>Энэ үйлчилгээгээр та амьсгалын аппарат ашиглан гүний усанд сэлж, үргэлжлэх туршлагатай болох болно. Хамгийн шилдэг тоног төхөөрөмжөөр тоноглогдсон.</p>
+            <label for="time">Цаг сонгоно уу:</label>
+            <select id="time" name="time">
+                <option value="9am">Өглөө 9:00</option>
+                <option value="12pm">Өдрийн 12:00</option>
+                <option value="3pm">Оройн 3:00</option>
+            </select>
+            <button>Захиалах</button>
+        </div>
+    </div>
+
+    <div class="service">
+        <h3>Усан гүний туршлага</h3>
+        <p>Усан гүний туршлагыг тогтмол зохион байгуулж, далай, нуурын орчныг судлахыг санал болгодог.</p>
+        <ul>
+            <li>Сүүлийн үеийн технологи ашиглан төрөл бүрийн аппарат ашиглах</li>
+            <li>Усан гүний аялалд зориулсан тусгай тоног төхөөрөмж</li>
+            <li>Харилцагчдын аюулгүй байдалд чиглэсэн сургалтууд</li>
+        </ul>
+        <button class="info-button" onclick="showOrderSection('underwater-experience')">Дэлгэрэнгүй мэдээлэл</button>
+        
+        <div id="underwater-experience" class="order-section">
+            <p>Энэ үйлчилгээгээр та шинэ төрлийн усан гүний туршлагуудыг амсах бөгөөд энэ нь таны адреналиныг нэмэгдүүлэх болно.</p>
+            <label for="time">Цаг сонгоно уу:</label>
+            <select id="time" name="time">
+                <option value="9am">Өглөө 9:00</option>
+                <option value="12pm">Өдрийн 12:00</option>
+                <option value="3pm">Оройн 3:00</option>
+            </select>
+            <button>Захиалах</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showOrderSection(id) {
+        const orderSections = document.querySelectorAll('.order-section');
+        orderSections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        
+        const selectedSection = document.getElementById(id);
+        selectedSection.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

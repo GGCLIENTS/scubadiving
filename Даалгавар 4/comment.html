@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuba Diving Comments</title>
+    <link rel="stylesheet" href="comment.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" class="logo">
+        <ul>
+            <li><a href="index.html">Нүүр</a></li>
+            <li><a href="aboutus.html">Бидний тухай</a></li>
+            <li><a href="hicheel.html">Хичээлүүд / үйлчилгээ</a></li>
+            <li><a href="comment.html">Сэтгэгдэл / Холбоо барих</a></li>
+        </ul>
+    </div>
+    <div class="comment-section">
+        <h2>Leave a Comment</h2>
+  
+        <form class="comment-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="comment" placeholder="Write your comment here..." required></textarea>
+            <button type="button" onclick="addComment()">Submit</button>
+        </form>
+        <div class="comments" id="comments">
+            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadComments);
+
+        function addComment() {
+            const name = document.getElementById('name').value.trim();
+            const comment = document.getElementById('comment').value.trim();
+            const commentsDiv = document.getElementById('comments');
+
+            if (name && comment) {
+                const commentObj = { name, comment };
+                saveCommentToStorage(commentObj);
+                renderComment(commentObj);
+
+                document.getElementById('name').value = '';
+                document.getElementById('comment').value = '';
+            } else {
+                alert('Please fill out both fields!');
+            }
+        }
+
+        function saveCommentToStorage(commentObj) {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push(commentObj);
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+
+        function deleteComment(index) {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.splice(index, 1);
+            localStorage.setItem('comments', JSON.stringify(comments));
+            loadComments();
+        }
+
+        function renderComment(commentObj, index) {
+            const commentsDiv = document.getElementById('comments');
+            const commentBlock = document.createElement('div');
+            commentBlock.className = 'comment';
+            commentBlock.innerHTML = `
+                <strong>${commentObj.name}</strong>
+                <p>${commentObj.comment}</p>
+                <button class="delete-btn" onclick="deleteComment(${index})">Delete</button>
+            `;
+            commentsDiv.appendChild(commentBlock);
+        }
+
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            const commentsDiv = document.getElementById('comments');
+            commentsDiv.innerHTML = '';
+            comments.forEach((commentObj, index) => renderComment(commentObj, index));
+        }
+    </script>
+</body>
+</html>
